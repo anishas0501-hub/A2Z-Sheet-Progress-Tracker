@@ -1,16 +1,74 @@
-# React + Vite
+# A2Z LeetCode - DSA Mastery Portal 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, highly interactive, and beautifully designed Data Structures and Algorithms tracking platform built with **React**, **Vite**, and **Framer Motion**. Inspired by Striver's A2Z DSA sheet, this platform helps developers structure their coding interview preparation seamlessly.
 
-Currently, two official plugins are available:
+![A2Z LeetCode Mockup](https://via.placeholder.com/1200x600?text=A2Z+LeetCode+Dashboard)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## React Compiler
+- **Structured Curriculum:** Problems categorized logically from arrays to advanced graphs and dynamic programming.
+- **Dynamic Dashboard:** Real-time visual progress tracking using **Recharts** (Pie charts & progress bars for difficulty levels).
+- **Interactive Question Lists:** Expandable topic sections, status tracking (✅ completed), difficulty indications, and one-click redirection to LeetCode.
+- **Local Data Persistence:** All your progress, marked questions, and completions are saved directly in your browser using LocalStorage—no signup required.
+- **Premium Animations:** Smooth page transitions, hover effects, and spring animations powered by **Framer Motion**.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Tech Stack
 
-## Expanding the ESLint configuration
+- **Framework:** React + Vite
+- **Styling:** CSS3 variables with a custom modern dark theme.
+- **Icons:** Lucide React
+- **Animations:** Framer Motion
+- **Data Visualization:** Recharts
+- **Deployment:** Vercel
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 Getting Started Locally
+
+Follow these steps to set up the project on your local machine.
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/anishas0501-hub/A2Z-LeetCode.git
+cd A2Z-LeetCode
+```
+
+### 2. Install Dependencies
+Make sure you have Node.js installed, then run:
+```bash
+npm install
+```
+
+### 3. Start the Development Server
+```bash
+npm run dev
+```
+Open your browser and navigate to `http://localhost:5173/` to see the application in action.
+
+## 🚢 Deployment
+
+This application can easily be deployed using Vercel.
+
+1. Install the Vercel CLI: `npm i -g vercel`
+2. Run `vercel login` and authenticate.
+3. Run `vercel --prod` to deploy!
+
+**Live Demo:** [https://dsa-portal-q2x4h3s40-anishas0501-2764s-projects.vercel.app](https://dsa-portal-q2x4h3s40-anishas0501-2764s-projects.vercel.app)
+
+## 📁 Project Structure
+
+```
+src/
+├── components/       # Reusable UI components (Dashboard, QuestionRow, ProblemSheet)
+│   └── ui/           # Primitive UI components (AnimatedCard, ProgressBar)
+├── context/          # React Context for global state management (Progress tracking)
+├── data/             # Static structured problem data (dsaData.js)
+├── index.css         # Global styles and CSS variables
+├── App.jsx           # Main application routing & layout
+└── main.jsx          # Entry point
+```
+
+## 🤝 Contributing
+Contributions, issues, and feature requests are welcome!
+Feel free to check [issues page](https://github.com/anishas0501-hub/A2Z-LeetCode/issues).
+
+---
+*Built with ❤️ by Anisha.*
