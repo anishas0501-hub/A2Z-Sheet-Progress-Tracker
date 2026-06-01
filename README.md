@@ -1,29 +1,76 @@
-# A2Z LeetCode - DSA Mastery Portal 🚀
+# A2Z Sheet-Progress-Tracker - DSA Mastery Portal 🚀
 
-A modern, highly interactive, and beautifully designed Data Structures and Algorithms tracking platform built with **React**, **Vite**, and **Framer Motion**. Inspired by Striver's A2Z DSA sheet, this platform helps developers structure their coding interview preparation seamlessly.
+[![React](https://img.shields.io/badge/React-19.0-blue?style=for-the-badge&logo=react)](https://react.dev/)
+[![Vite](https://img.shields.io/badge/Vite-7.0-purple?style=for-the-badge&logo=vite)](https://vitejs.dev/)
+[![Framer Motion](https://img.shields.io/badge/Framer_Motion-12.0-pink?style=for-the-badge&logo=framer)](https://www.framer.com/motion/)
+[![Recharts](https://img.shields.io/badge/Recharts-3.0-orange?style=for-the-badge&logo=chart)](https://recharts.org/)
 
-![A2Z LeetCode Mockup](https://via.placeholder.com/1200x600?text=A2Z+LeetCode+Dashboard)
+A state-of-the-art, highly interactive, and beautifully designed Data Structures and Algorithms tracking platform built with **React**, **Vite**, and **Framer Motion**. Inspired by Striver's A2Z DSA sheet, this portal is specifically engineered to help developers structure their coding preparation while offering a high-fidelity visual experience recruiters will notice immediately.
 
-## ✨ Features
+---
 
-- **Structured Curriculum:** Problems categorized logically from arrays to advanced graphs and dynamic programming.
-- **Dynamic Dashboard:** Real-time visual progress tracking using **Recharts** (Pie charts & progress bars for difficulty levels).
-- **Interactive Question Lists:** Expandable topic sections, status tracking (✅ completed), difficulty indications, and one-click redirection to LeetCode.
-- **Local Data Persistence:** All your progress, marked questions, and completions are saved directly in your browser using LocalStorage—no signup required.
-- **Premium Animations:** Smooth page transitions, hover effects, and spring animations powered by **Framer Motion**.
+## ✨ Features & UX Details
+
+The portal is packed with modern UI patterns and clean heuristics designed to maximize usability and reduce cognitive load:
+
+- 📊 **Dynamic Analytics Dashboard**:
+  - **Key Metrics**: Real-time stats showing *Total Solved*, *Completion Rate (%)*, *Problems Remaining*, and *Current Focus*.
+  - **Smart Focus Heuristic**: Automatically determines your current topic in progress (first partially completed step or the first unstarted step) so you always know what to study next.
+  - **Topic Progress Grid**: A dedicated summary list of all 17 modules, complete with individual, animated horizontal progress bars and exact absolute counts.
+  - **Overall Progress & Breakdown**: Interactive radial chart visualizations representing solved vs. unsolved questions, alongside separate Easy, Medium, and Hard milestones.
+
+- 🗂️ **Problems Page Accordion**:
+  - All curriculum sections are collapsed by default to prevent overwhelm.
+  - Single-open accordion logic ensures expanding one section automatically collapses the previous one.
+
+- 🔍 **Real-Time Dynamic Search**:
+  - Instantly search and filter across **Problem Names**, **Topics**, or **Difficulties** (e.g. typing `tree` displays all tree questions instantly).
+  - **Auto-Expansion**: Accordions automatically expand in search mode, showing matches immediately without manual toggling.
+
+- 📅 **Local Storage Updates & Timestamps**:
+  - Fully serverless data persistence via browser LocalStorage.
+  - Toggles are time-stamped. The sidebar displays a dynamically formatted `"Last Updated"` timestamp (e.g. *June 1, 2026*).
+
+- 🎨 **Premium Aesthetic & Visual Polish**:
+  - Styled visual dots embedded directly in difficulty badges (🟢 Easy, 🟡 Medium, 🔴 Hard).
+  - Clean glassmorphism styling, harmonized CSS dark-mode palettes, and spring physics micro-animations.
+  - Active navigation menu polishes with colored accent-left indicator borders and hover lifts.
+  - Highly motivating, designed Empty State card prompts for new users with 0 completed problems: *"Start with Arrays to build momentum 🚀"*.
+
+---
 
 ## 🛠️ Tech Stack
 
-- **Framework:** React + Vite
-- **Styling:** CSS3 variables with a custom modern dark theme.
-- **Icons:** Lucide React
-- **Animations:** Framer Motion
-- **Data Visualization:** Recharts
-- **Deployment:** Vercel
+- **Framework**: React 19 + Vite 7 (ECMAScript Modules)
+- **Styling**: Modern CSS3 custom variables with a tailored glassmorphic dark theme
+- **Icons**: Lucide React
+- **Animations**: Framer Motion
+- **Data Visualization**: Recharts (Custom SVG filters & tooltip layouts)
+- **State Management**: React Context API for global progress sync
+
+---
+
+## 📁 Project Structure
+
+```
+src/
+├── components/       # Core UI components
+│   ├── ui/           # Atom layouts (AnimatedCard, ProgressBar)
+│   ├── Dashboard.jsx # Dynamic dashboard grid & charts
+│   ├── ProblemSheet.jsx # Accordion, Search & curriculum structure
+│   ├── QuestionRow.jsx  # Question item status & difficulty badges
+│   └── QuestionList.jsx # Legacy pages / reference lists
+├── context/          # React Context (ProgressContext with LocalStorage timestamp)
+├── data/             # Static structured problem data (dsaData.js)
+├── pages/            # Legacy analytical route modules (Problems, Dashboard)
+├── index.css         # Global style tokens, custom variables & animations
+├── App.jsx           # App layout, Sidebar nav, and context routing
+└── main.jsx          # Entry point
+```
+
+---
 
 ## 🚀 Getting Started Locally
-
-Follow these steps to set up the project on your local machine.
 
 ### 1. Clone the repository
 ```bash
@@ -32,43 +79,34 @@ cd A2Z-LeetCode
 ```
 
 ### 2. Install Dependencies
-Make sure you have Node.js installed, then run:
 ```bash
 npm install
 ```
 
-### 3. Start the Development Server
+### 3. Start Development Server
 ```bash
 npm run dev
 ```
-Open your browser and navigate to `http://localhost:5173/` to see the application in action.
+Open [http://localhost:5173/](http://localhost:5173/) in your web browser.
+
+### 4. Build for Production
+```bash
+npm run build
+```
+
+---
 
 ## 🚢 Deployment
 
-This application can easily be deployed using Vercel.
+Easily deployable using **Vercel**:
 
-1. Install the Vercel CLI: `npm i -g vercel`
-2. Run `vercel login` and authenticate.
-3. Run `vercel --prod` to deploy!
+```bash
+npm i -g vercel
+vercel login
+vercel --prod
+```
 
 **Live Demo:** [https://dsa-portal-q2x4h3s40-anishas0501-2764s-projects.vercel.app](https://dsa-portal-q2x4h3s40-anishas0501-2764s-projects.vercel.app)
-
-## 📁 Project Structure
-
-```
-src/
-├── components/       # Reusable UI components (Dashboard, QuestionRow, ProblemSheet)
-│   └── ui/           # Primitive UI components (AnimatedCard, ProgressBar)
-├── context/          # React Context for global state management (Progress tracking)
-├── data/             # Static structured problem data (dsaData.js)
-├── index.css         # Global styles and CSS variables
-├── App.jsx           # Main application routing & layout
-└── main.jsx          # Entry point
-```
-
-## 🤝 Contributing
-Contributions, issues, and feature requests are welcome!
-Feel free to check [issues page](https://github.com/anishas0501-hub/A2Z-LeetCode/issues).
 
 ---
 *Built with ❤️ by Anisha.*

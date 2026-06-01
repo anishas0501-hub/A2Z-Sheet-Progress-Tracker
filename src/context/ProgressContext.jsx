@@ -22,6 +22,14 @@ export function ProgressProvider({ children }) {
     }
   });
 
+  const [lastUpdated, setLastUpdated] = useState(() => {
+    try {
+      return localStorage.getItem('dsa_last_updated') || null;
+    } catch (e) {
+      return null;
+    }
+  });
+
   // Sync to local storage on change
   useEffect(() => {
     localStorage.setItem('dsa_completed', JSON.stringify(completed));
@@ -36,6 +44,9 @@ export function ProgressProvider({ children }) {
       ...prev,
       [questionId]: !prev[questionId]
     }));
+    const stamp = new Date().toISOString();
+    setLastUpdated(stamp);
+    localStorage.setItem('dsa_last_updated', stamp);
   };
 
   const toggleImportant = (questionId) => {
@@ -43,6 +54,9 @@ export function ProgressProvider({ children }) {
       ...prev,
       [questionId]: !prev[questionId]
     }));
+    const stamp = new Date().toISOString();
+    setLastUpdated(stamp);
+    localStorage.setItem('dsa_last_updated', stamp);
   };
 
   return (
@@ -51,7 +65,8 @@ export function ProgressProvider({ children }) {
         completed, 
         toggleCompleted, 
         markedImportant, 
-        toggleImportant
+        toggleImportant,
+        lastUpdated
       }}
     >
       {children}

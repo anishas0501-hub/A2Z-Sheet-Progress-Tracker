@@ -141,11 +141,19 @@ body {
   align-items: center;
   gap: 12px;
   transition: all 0.2s;
+  border-left: 3px solid transparent;
 }
 
-.nav-link:hover, .nav-link.active {
+.nav-link:hover {
   background: var(--bg-card-hover);
   color: var(--text-primary);
+}
+
+.nav-link.active {
+  background: rgba(59, 130, 246, 0.1);
+  color: var(--text-primary);
+  border-left: 3px solid var(--accent-primary);
+  font-weight: 600;
 }
 
 .text-gradient {

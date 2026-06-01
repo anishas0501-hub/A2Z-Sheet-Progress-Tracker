@@ -43,7 +43,14 @@ export default function QuestionRow({ question, delay = 0 }) {
         </a>
       </td>
       <td>
-        <span className={`difficulty-badge difficulty-${question.difficulty}`}>
+        <span className={`difficulty-badge difficulty-${question.difficulty}`} style={{ display: "inline-flex", alignItems: "center", gap: "6px" }}>
+          <span style={{
+            width: "8px",
+            height: "8px",
+            borderRadius: "50%",
+            backgroundColor: question.difficulty === "Easy" ? "var(--diff-easy-text)" : question.difficulty === "Medium" ? "var(--diff-medium-text)" : "var(--diff-hard-text)",
+            display: "inline-block"
+          }}></span>
           {question.difficulty}
         </span>
       </td>
