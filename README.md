@@ -106,7 +106,7 @@ vercel login
 vercel --prod
 ```
 
-**Live Demo:** [https://dsa-portal.vercel.app](https://dsa-portal.vercel.app)
+**Live Demo:** [https://dsa-portal-eight.vercel.app/](https://dsa-portal-eight.vercel.app/)
 
 ---
 *Built with ❤️ by Anisha.*
