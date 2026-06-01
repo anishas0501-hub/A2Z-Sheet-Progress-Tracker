@@ -106,7 +106,7 @@ vercel login
 vercel --prod
 ```
 
-**Live Demo:** [https://a2z-sheet-progress-tracker.vercel.app](https://a2z-sheet-progress-tracker.vercel.app)
+**Live Demo:** [https://dsa-portal.vercel.app](https://dsa-portal.vercel.app)
 
 ---
 *Built with ❤️ by Anisha.*
